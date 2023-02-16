@@ -61,6 +61,13 @@ const customerAndAge = (obj) => {
 
 const getEntries = (obj) => {
   // write your code here
+  let arrElmnt ;
+  let result = []
+  for(let index of Object.keys(obj) ){
+    arrElmnt = `${index}: ${obj[index]}`
+    result.push(arrElmnt);
+  }
+  return result
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -103,7 +110,11 @@ const getInfo = (arr) => {
   let coursesName = [];
   let studentsName = [];
   // write your code here
-
+  for(let i=0 ; i < courses.length; i++){
+    coursesName.push(courses[i].course);
+    for(let index of courses[i].Students )
+    studentsName.push(courses[i].Students[index])
+  }
   return { coursesName, studentsName };
 };
 // -------------------------------------------------------------------------------------------------------
@@ -127,6 +138,20 @@ const getInfo = (arr) => {
 
 const getStudents = (arr) => {
   // write your code here
+  let result = [];
+  let obj ; 
+  for(let i=0 ; i<arr.length ; i++){
+    for(const index in courses){
+      if (courses[index].Students.includes(arr[i])){
+        obj ={
+          Student: arr[i],
+          course: courses[index].course,
+        }
+        result.push(obj);
+      }
+    }
+  }
+  return result ; 
 };
 //  ------------------------------------------------------------------------------------------------------
 
