@@ -98,21 +98,21 @@ describe("Challenge09", () => {
 });
 
 describe("Challenge09", () => {
-  test.skip("Round-Decimals", () => {
+  test("Round-Decimals", () => {
     expect(roundDecimals([5.4, 5.5, 6.7, 6.8])).toStrictEqual([5, 6, 7, 7]);
     expect(roundDecimals([6.1, 2.3, 5, 2.9])).toStrictEqual([6, 2, 5, 3]);
   });
 });
 
 describe("Challenge09", () => {
-  test.skip("Employees-Bonus", () => {
+  test("Employees-Bonus", () => {
     expect(employeesBonus(data)).toStrictEqual(res);
     expect(employeesBonus(data2)).toStrictEqual(res2);
   });
 });
 
-describe.skip("Challenge09", () => {
-  test.skip("Most-Expensive", () => {
+describe("Challenge09", () => {
+  test("Most-Expensive", () => {
     expect(
       mostExpensive(
         200,
