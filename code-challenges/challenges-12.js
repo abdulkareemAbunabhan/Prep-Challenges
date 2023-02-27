@@ -77,6 +77,18 @@ const oddFiltration = (arr) => {
 
 const cvsFiltration = (arr) => {
     // write your code here
+    let cvFiltering = arr.filter((item)=>{
+        if(item.tech == 'JS' && item.yearsOfExperience > 4){
+            return true ; 
+        }
+    })
+    let cvConst = cvFiltering.map((item)=>{
+        if(item.LastName == null){
+            item.LastName = ""
+        }
+        return {fullName : `${item.firstName} ${item.LastName}`,tech : item.tech}
+    })
+    return cvConst ; 
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -92,6 +104,14 @@ const cvsFiltration = (arr) => {
 
 const vowelsFiltration = (arr) => {
     // write your code here
+    let res = arr.filter((item)=>{
+        if(item.includes('a')||item.includes('e')||item.includes('i')||item.includes('o')||item.includes('u')){
+
+        }else{
+            return true ;
+        }
+    })
+    return res ;
 } 
 // -------------------------------------------------------------------------------------------------------
 
@@ -114,6 +134,22 @@ const vowelsFiltration = (arr) => {
 
 const skillComparison = (arr1, arr2) => {
     // write your code here
+    let res = arr1.filter((item)=>{
+        if(arr2.includes(item)){
+            
+        }else{
+            return true ;
+        }
+    });
+    let res2 = arr2.filter((item)=>{
+        if(arr1.includes(item)){
+
+        }else{
+            return true ;
+        }
+    })
+    let res3 = [...res,...res2]
+    return res3;
 }
 // -------------------------------------------------------------------------------------------------------
 
